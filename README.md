@@ -14,10 +14,10 @@ sudo apt-get install golang-1.10-go
 
 ## Build libewf
 
+```
 git clone https://github.com/libyal/libewf
 sudo apt install autoconf automake autopoint libtool pkg-config bison flex
 
-```
 cd libewf/
 ./synclibs.sh
 ./autogen.sh
