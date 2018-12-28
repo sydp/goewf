@@ -1,0 +1,3 @@
+[submodule "libewf"]
+	path = libewf
+	url = https://github.com/libyal/libewf.git
