@@ -10,7 +10,7 @@ import (
 func main() {
 
 	if len(os.Args) != 3 {
-		println("Usage: handle <filename> <bytes_To_read>")
+		println("Usage: goewf <filename> <bytes_To_read>")
 		return
 	}
 

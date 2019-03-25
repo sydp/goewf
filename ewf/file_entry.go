@@ -1,8 +1,8 @@
 package ewf
 
 /*
-#cgo LDFLAGS: -L.lib/ -lewf
-#include "libewf/libewf.h"
+#cgo LDFLAGS: -L../libewf/libewf/.libs/ -lewf
+#include "../libewf/include/libewf.h"
 #include <stdlib.h>
 
 static char* makeCstring(ulong size) {
@@ -140,7 +140,7 @@ func (e *FileEntry) GetSize() (uint64, error) {
 func (e *FileEntry) GetCreationTime() (time.Time, error) {
 	var cError *C.libewf_error_t
 
-	var fileEntryCreationTime C.uint
+	var fileEntryCreationTime C.int
 
 	if C.libewf_file_entry_get_creation_time(e.h, &fileEntryCreationTime, &cError) != 1 {
 		defer C.free(unsafe.Pointer(cError))
@@ -153,7 +153,7 @@ func (e *FileEntry) GetCreationTime() (time.Time, error) {
 func (e *FileEntry) GetModificationTime() (time.Time, error) {
 	var cError *C.libewf_error_t
 
-	var fileEntryModificationTime C.uint
+	var fileEntryModificationTime C.int
 
 	if C.libewf_file_entry_get_modification_time(e.h, &fileEntryModificationTime, &cError) != 1 {
 		defer C.free(unsafe.Pointer(cError))
@@ -166,7 +166,7 @@ func (e *FileEntry) GetModificationTime() (time.Time, error) {
 func (e *FileEntry) GetAccessTime() (time.Time, error) {
 	var cError *C.libewf_error_t
 
-	var fileEntryAccessTime C.uint
+	var fileEntryAccessTime C.int
 
 	if C.libewf_file_entry_get_access_time(e.h, &fileEntryAccessTime, &cError) != 1 {
 		defer C.free(unsafe.Pointer(cError))
@@ -179,7 +179,7 @@ func (e *FileEntry) GetAccessTime() (time.Time, error) {
 func (e *FileEntry) GetEntryModificationTime() (time.Time, error) {
 	var cError *C.libewf_error_t
 
-	var fileEntryEntryModificationTime C.uint
+	var fileEntryEntryModificationTime C.int
 
 	if C.libewf_file_entry_get_entry_modification_time(e.h, &fileEntryEntryModificationTime, &cError) != 1 {
 		defer C.free(unsafe.Pointer(cError))

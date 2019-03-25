@@ -1,8 +1,8 @@
 package ewf
 
 /*
-#cgo LDFLAGS: -L.lib/ -lewf
-#include "libewf/libewf.h"
+#cgo LDFLAGS: -L../libewf/libewf/.libs/ -lewf
+#include "../libewf/include/libewf.h"
 #include <stdlib.h>
 static char**makeCharArray(int size) {
     return calloc(sizeof(char*), size);
