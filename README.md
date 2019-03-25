@@ -12,15 +12,21 @@ sudo apt-get update
 sudo apt-get install golang-1.10-go
 ```
 
-## Build libewf
+## Clone, build libewf, run sample
 
 ```
-git clone https://github.com/libyal/libewf
 sudo apt install autoconf automake autopoint libtool pkg-config bison flex
+
+go get -u github.com/sydp/goewf
 
 cd libewf/
 ./synclibs.sh
 ./autogen.sh
 ./configure
 ./make
+
+go build -o goewf cmd/goewf/main.go
+
+# Read the first 512 bytes from image.E01
+goewf image.E01 512
 ```
